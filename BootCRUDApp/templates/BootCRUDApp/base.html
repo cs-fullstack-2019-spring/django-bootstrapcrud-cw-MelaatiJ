@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!--links to load bootstrap-->
     {% load static %}
     <link rel="stylesheet" href="{% static 'BootCRUDApp/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'BootCRUDApp/css/base.css' %}">
@@ -10,11 +11,11 @@
     <script src="{% static 'BootCRUDApp/js/bootstrap.js' %}"></script>
 </head>
 <body>
-
+<!--header-->
 <header class="jumbotron">
-    <h1>Testing Bootstrap</h1>
+    <h1>Welcome to World Garage Sale!</h1>
 </header>
-
+<!-- block setup for the other html pages with just one block content-->
 {% block content %}
 <h1>In the Index Page</h1>
 {% endblock content %}

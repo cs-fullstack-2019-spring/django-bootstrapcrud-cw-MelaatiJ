@@ -1,5 +1,30 @@
 {% extends 'BootCRUDApp/base.html' %}
-
+<!-- starting my block content-->
 {% block content %}
-<h1>In the Index Page</h1>
+{% if allItems %}
+<!-- card layout with bootstrap -->
+<div class="gridContainer">
+    {% for eachItem in allItems %}
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{ eachItem.imageURL }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ eachItem.name }}</h5>
+            <p class="card-text"> {{ eachItem.description }} <br> ${{ eachItem.price }}</p>
+            <a href="{% url 'edit' eachItem.id %}"><button>Edit Item</button></a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<h1>No Items for sale</h1>
+{% endif %}
+<!-- my form -->
+<h1>You have an item you would like to add to the garage sale ??</h1>
+<br>
+<h2>Fill out the form below to add an item</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Sell It!</button>
+</form>
 {% endblock content %}

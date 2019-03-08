@@ -1,0 +1,10 @@
+{% extends 'BootCRUDApp/base.html' %}
+
+<!--form on edit page which will alow all the information to come back to the form -->
+{% block content %}
+<form method="post">
+    {%  csrf_token %}
+    {{ form.as_p }}
+    <button>Edit</button>
+</form>
+{% endblock content %}
