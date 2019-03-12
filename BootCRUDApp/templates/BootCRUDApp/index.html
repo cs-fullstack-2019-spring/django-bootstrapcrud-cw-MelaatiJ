@@ -6,10 +6,11 @@
 <div class="gridContainer">
     {% for eachItem in allItems %}
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="{{ eachItem.imageURL }}" alt="Card image cap">
+
+        <img class="card-img-top" src="{{ eachItem.image_URL }}" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">{{ eachItem.name }}</h5>
-            <p class="card-text"> {{ eachItem.description }} <br> ${{ eachItem.price }}</p>
+            <p class="card-text"> {{ eachItem.description }} - {{ eachItem.imageURL }} <br> ${{ eachItem.price }}</p>
             <a href="{% url 'edit' eachItem.id %}"><button>Edit Item</button></a>
         </div>
     </div>

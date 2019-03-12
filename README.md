@@ -7,4 +7,5 @@ you also have to edit the items on the list
 Add a CSS Grid to this page so you can have multiple items per row.
 
 Bootstrap card can be found here: https://getbootstrap.com/docs/4.0/components/card/
- 
+<hr>
+1.5 points. Your images were not showing up because you didn't put your underscore in your image_URL.
